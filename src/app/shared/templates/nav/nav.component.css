@@ -1,0 +1,10 @@
+nav {
+  height: 70px;
+  max-width: 100%;
+  & figure {
+    margin: 0px;
+    & img {
+      width: 234px;
+    }
+  }
+}
