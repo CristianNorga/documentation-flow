@@ -1,0 +1,18 @@
+<aside class="sc-side-tools d-flex flex-column border-end">
+  <section class="sc-side-tools__options d-flex justify-content-center">
+    <button [ngClass]="{active: toolActived == 'filter'}" class="col-6" type="button" (click)="changeTool('filter')">
+      Filtros
+    </button>
+    <button [ngClass]="{active: toolActived == 'create'}" class="col-6" type="button" (click)="changeTool('create')">
+      Crear
+    </button>
+  </section>
+  <section class="sc-side-tools__content">
+    <div *ngIf="toolActived == 'filter'">
+      filtros
+    </div>
+    <div *ngIf="toolActived == 'create'">
+      crear
+    </div>
+  </section>
+</aside>

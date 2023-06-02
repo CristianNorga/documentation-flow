@@ -12,12 +12,18 @@ export class ComponentsService {
       name: 'component a',
       description: 'Content',
       category: 'Node_1',
+      posx: 30,
+      posy: 30,
+      type: 'backend',
     },
     {
       id: 2,
       name: 'component b',
       description: 'Content',
       category: 'Node_1',
+      posx: 30,
+      posy: 30,
+      type: 'backend',
     },
   ];
   constructor() {}

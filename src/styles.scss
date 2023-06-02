@@ -195,7 +195,8 @@
   --dfNodeSelectedBoxShadowS: 2px;
   --dfNodeSelectedBoxShadowColor: #4ea9ff;
 
-  --dfInputBackgroundColor: #ffffff;
+  --dfInputBackgroundColor: #00369c;
+  --dfInputBackgroundColorFirst: #3ec92b;
   --dfInputBorderSize: 2px;
   --dfInputBorderColor: #000000;
   --dfInputBorderRadius: 50px;
@@ -207,8 +208,7 @@
   --dfInputHoverBorderSize: 2px;
   --dfInputHoverBorderColor: #000000;
   --dfInputHoverBorderRadius: 50px;
-
-  --dfOutputBackgroundColor: #ffffff;
+  --dfOutputBackgroundColor: #00369c;
   --dfOutputBorderSize: 2px;
   --dfOutputBorderColor: #000000;
   --dfOutputBorderRadius: 50px;
@@ -305,6 +305,9 @@
   border-radius: var(--dfInputBorderRadius);
   height: var(--dfInputHeight);
   width: var(--dfInputWidth);
+}
+.drawflow .drawflow-node .input:first-child {
+  background: var(--dfInputBackgroundColorFirst);
 }
 
 .drawflow .drawflow-node .input:hover {

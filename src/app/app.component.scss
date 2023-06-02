@@ -1,0 +1,30 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+
+  *:nth-child(1) {
+    position: relative;
+    z-index: 5;
+  }
+
+  *:nth-child(2) {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sc-side-tools {
+    width: 360px;
+    height: 100%;
+    display: block;
+  }
+
+  .sc-draw-board {
+    width: calc(100% - 360px);
+    height: 100%;
+    display: block;
+  }
+}
