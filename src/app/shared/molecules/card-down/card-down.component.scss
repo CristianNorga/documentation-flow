@@ -1,0 +1,19 @@
+.sc-card-down {
+  .sc-card-down__icon {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(-90deg);
+  }
+  .sc-card-down__header {
+    cursor: pointer;
+  }
+  .sc-card-down__body {
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    height: auto;
+  }
+  &.sc-card-down--active {
+    .sc-card-down__icon {
+      transform: rotate(90deg);
+    }
+  }
+}

@@ -151,15 +151,15 @@
 
 :root {
   --dfBackgroundColor: #ffffff;
-  --dfBackgroundSize: 0px;
-  --dfBackgroundImage: none;
+  --dfBackgroundSize: 9px;
+  --dfBackgroundImage: linear-gradient(to right, rgba(215, 215, 215, 1) 1px, transparent 1px), linear-gradient(to bottom, rgba(230, 230, 230, 1) 1px, transparent 1px);
 
   --dfNodeType: flex;
   --dfNodeTypeFloat: none;
   --dfNodeBackgroundColor: #ffffff;
   --dfNodeTextColor: #000000;
   --dfNodeBorderSize: 2px;
-  --dfNodeBorderColor: #000000;
+  --dfNodeBorderColor: rgba(228, 228, 228, 1);
   --dfNodeBorderRadius: 4px;
   --dfNodeMinHeight: 40px;
   --dfNodeMinWidth: 160px;
@@ -169,7 +169,7 @@
   --dfNodeBoxShadowVL: 2px;
   --dfNodeBoxShadowBR: 15px;
   --dfNodeBoxShadowS: 2px;
-  --dfNodeBoxShadowColor: #000000;
+  --dfNodeBoxShadowColor: rgba(225, 225, 225, 1);
 
   --dfNodeHoverBackgroundColor: #ffffff;
   --dfNodeHoverTextColor: #000000;
@@ -181,10 +181,10 @@
   --dfNodeHoverBoxShadowVL: 2px;
   --dfNodeHoverBoxShadowBR: 15px;
   --dfNodeHoverBoxShadowS: 2px;
-  --dfNodeHoverBoxShadowColor: #4ea9ff;
+  --dfNodeHoverBoxShadowColor: rgba(208, 232, 255, 1);
 
-  --dfNodeSelectedBackgroundColor: #000000;
-  --dfNodeSelectedTextColor: #ffffff;
+  --dfNodeSelectedBackgroundColor: rgba(249, 249, 249, 1);
+  --dfNodeSelectedTextColor: rgba(0, 0, 0, 1);
   --dfNodeSelectedBorderSize: 2px;
   --dfNodeSelectedBorderColor: #000000;
   --dfNodeSelectedBorderRadius: 4px;
@@ -208,6 +208,7 @@
   --dfInputHoverBorderSize: 2px;
   --dfInputHoverBorderColor: #000000;
   --dfInputHoverBorderRadius: 50px;
+
   --dfOutputBackgroundColor: #00369c;
   --dfOutputBorderSize: 2px;
   --dfOutputBorderColor: #000000;
@@ -249,7 +250,7 @@
   --dfDeleteHoverBorderRadius: 50px;
 }
 
-#drawflow {
+.parent-drawflow {
   background: var(--dfBackgroundColor);
   background-size: var(--dfBackgroundSize) var(--dfBackgroundSize);
   background-image: var(--dfBackgroundImage);

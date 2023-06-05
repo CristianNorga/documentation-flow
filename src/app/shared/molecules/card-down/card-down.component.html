@@ -1,0 +1,15 @@
+<div [ngClass]="{'sc-card-down--active': isOpen}" class="sc-card-down card">
+  <div (click)="toggle()" class="sc-card-down__header card-header d-flex justify-content-between rounded-0">
+    <p class="text-start fw-medium fs-5 fs-5 p-0 m-0">#{{title}}</p>
+    <img class="sc-card-down__icon"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkUlEQVR4nO3VPQrCUBDE8d8hEm30MhZprfQwCuY8pvIiegoFPw6hBFKEB3a7WJiBbee/zJvlMSlBK9xwwTLavMYD72H20YDjyLyfJtJ8XZj3sDBVuI/MX5hHArpi+01mNKfM1jwxiwS0xfZbwTpkA+ohlrSI0h/5W03Do6qyD+1nUTXZrdpJ+nCuOGORAfBf+gCwkkJfXRWU8AAAAABJRU5ErkJggg==">
+  </div>
+  <div #cardbody id="cardbody" class="sc-card-down__body card-body p-0" [@openClose]="isOpen ? 'open' : 'closed'">
+    <div class="sc-card-down__content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <!-- <div class="d-flex justify-content-end">
+    <button class="btn btn-outline-primary btn-sm me-2">Add</button>
+    <button class="btn btn-outline-primary btn-sm">Edit</button> -->
+</div>

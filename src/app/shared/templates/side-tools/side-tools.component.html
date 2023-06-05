@@ -1,4 +1,4 @@
-<aside class="sc-side-tools d-flex flex-column border-end">
+<aside class="sc-side-tools d-flex flex-column border-end h-100">
   <section class="sc-side-tools__options d-flex justify-content-center">
     <button [ngClass]="{active: toolActived == 'filter'}" class="col-6" type="button" (click)="changeTool('filter')">
       Filtros
@@ -12,7 +12,7 @@
       filtros
     </div>
     <div *ngIf="toolActived == 'create'">
-      crear
+      <sc-nodes-tools></sc-nodes-tools>
     </div>
   </section>
 </aside>

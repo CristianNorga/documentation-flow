@@ -10,7 +10,6 @@ export class SideToolsComponent {
   constructor() {}
 
   changeTool(toolToActive: string){
-    console.log('change tool ', toolToActive);
     this.toolActived = toolToActive;
   };
 }
