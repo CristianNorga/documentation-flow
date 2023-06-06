@@ -1,0 +1,25 @@
+<select
+  [formControl]="typeNode"
+  class="form-select"
+  aria-label="Default select example"
+  >
+  <option value="" selected>Seleccione una opción</option>
+  <option value="component">Componente</option>
+  <option value="flow">Flujo</option>
+  <option value="path">Ruta</option>
+</select>
+
+<div class="mt-3">
+  <div *ngIf="typeNode.value == 'component'">
+    <sc-node-component (create)="createNode($event)"></sc-node-component>
+  </div>
+  <div *ngIf="typeNode.value == 'flow'">Formulario Flujo</div>
+  <div *ngIf="typeNode.value == 'path'">Formulario Ruta</div>
+</div>
+
+<button
+  type="button"
+  [disabled]="!isValid"
+  class="btn btn-outline-primary rounded rounded-pill px-4 mt-4 fw-medium">
+  Crear
+</button>

@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { NavComponent } from './templates/nav/nav.component';
 import { DrawBoardComponent } from './templates/draw-board/draw-board.component';
 import { SideToolsComponent } from './templates/side-tools/side-tools.component';
 import { NodesToolsComponent } from './organism/nodes-tools/nodes-tools.component';
 import { CardDownComponent } from './molecules/card-down/card-down.component';
+import { NodesTemplateComponent } from './organism/nodes-template/nodes-template.component';
+import { NodeComponentComponent } from './molecules/node-component/node-component.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +17,10 @@ import { CardDownComponent } from './molecules/card-down/card-down.component';
     SideToolsComponent,
     NodesToolsComponent,
     CardDownComponent,
+    NodesTemplateComponent,
+    NodeComponentComponent,
   ],
-  imports: [CommonModule],
-  exports: [
-    NavComponent,
-    DrawBoardComponent,
-    SideToolsComponent,
-  ],
+  imports: [CommonModule, ReactiveFormsModule],
+  exports: [NavComponent, DrawBoardComponent, SideToolsComponent],
 })
 export class SharedModule {}
