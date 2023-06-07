@@ -1,12 +1,25 @@
 
+// GENERAL
 export type typesNodes = 'components' | 'flows' | 'paths';
-
-export type typeComponent = 'backend' | 'frontend' | 'database' | 'service';
 
 export enum classNodes {
   'components' = 'sc-drawflow--components',
   'flows' = 'sc-drawflow--flows',
   'paths' = 'sc-drawflow--paths',
+}
+
+// COMPONENTE
+export type typeComponent = 'backend' | 'frontend' | 'database' | 'service';
+
+export interface component {
+  id: number;
+  type: typesNodes;
+  category: typeComponent;
+  posx: number;
+  posy: number;
+  data: dataComponent;
+  // inputs: number;
+  // outputs: number;
 }
 
 export enum inputs {
@@ -23,19 +36,25 @@ export enum outputs {
   'service' = 1,
 }
 
-export interface component {
-  id: number;
+export interface dataComponent {
   name: string;
-  description: string;
-  category: string;
-  posx: number;
-  posy: number;
-  type: typeComponent;
-  // inputs: number;
-  // outputs: number;
+  framework: string;
+  hosting: string;
+  version: string;
+  repository: string;
+  continuousDeployment: boolean;
+  automatedDeliveryProcess: boolean;
+  frequentDeliveries: boolean;
+  automatedTesting: boolean;
+  versionControl: boolean;
+  monitoring: boolean;
+  lastDeploy: string;
+  unitTesting: number;
+  wiki: string;
 }
 
-export interface flow extends component {
+// FLUJO
+export interface flow extends component {}
 
-}
+// RUTA
 export interface path extends component {}

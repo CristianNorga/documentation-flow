@@ -9,6 +9,7 @@ import { NodesToolsComponent } from './organism/nodes-tools/nodes-tools.componen
 import { CardDownComponent } from './molecules/card-down/card-down.component';
 import { NodesTemplateComponent } from './organism/nodes-template/nodes-template.component';
 import { NodeComponentComponent } from './molecules/node-component/node-component.component';
+import { FormNodeComponentComponent } from './molecules/form-node-component/form-node-component.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NodeComponentComponent } from './molecules/node-component/node-componen
     CardDownComponent,
     NodesTemplateComponent,
     NodeComponentComponent,
+    FormNodeComponentComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule],
   exports: [NavComponent, DrawBoardComponent, SideToolsComponent],

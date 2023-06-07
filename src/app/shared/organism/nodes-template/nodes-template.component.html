@@ -4,17 +4,17 @@
   aria-label="Default select example"
   >
   <option value="" selected>Seleccione una opción</option>
-  <option value="component">Componente</option>
-  <option value="flow">Flujo</option>
-  <option value="path">Ruta</option>
+  <option value="components">Componente</option>
+  <option value="flows">Flujo</option>
+  <option value="paths">Ruta</option>
 </select>
 
 <div class="mt-3">
-  <div *ngIf="typeNode.value == 'component'">
-    <sc-node-component (create)="createNode($event)"></sc-node-component>
+  <div *ngIf="typeNode.value == 'components'">
+    <sc-form-node-component (create)="enableButton($event)"></sc-form-node-component>
   </div>
-  <div *ngIf="typeNode.value == 'flow'">Formulario Flujo</div>
-  <div *ngIf="typeNode.value == 'path'">Formulario Ruta</div>
+  <div *ngIf="typeNode.value == 'flows'">Formulario Flujo</div>
+  <div *ngIf="typeNode.value == 'paths'">Formulario Ruta</div>
 </div>
 
 <button

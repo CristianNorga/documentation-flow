@@ -46,7 +46,7 @@
   border: 2px solid #000;
   color: #000;
   z-index: 2;
-  padding: 15px;
+  // padding: 15px;
 }
 .drawflow .drawflow-node.selected {
   background: red;
@@ -152,7 +152,12 @@
 :root {
   --dfBackgroundColor: #ffffff;
   --dfBackgroundSize: 9px;
-  --dfBackgroundImage: linear-gradient(to right, rgba(215, 215, 215, 1) 1px, transparent 1px), linear-gradient(to bottom, rgba(230, 230, 230, 1) 1px, transparent 1px);
+  --dfBackgroundImage: linear-gradient(
+      to right,
+      rgba(215, 215, 215, 1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(230, 230, 230, 1) 1px, transparent 1px);
 
   --dfNodeType: flex;
   --dfNodeTypeFloat: none;
@@ -200,7 +205,7 @@
   --dfInputBorderSize: 2px;
   --dfInputBorderColor: #000000;
   --dfInputBorderRadius: 50px;
-  --dfInputLeft: -27px;
+  --dfInputLeft: -12px;
   --dfInputHeight: 20px;
   --dfInputWidth: 20px;
 
@@ -213,7 +218,7 @@
   --dfOutputBorderSize: 2px;
   --dfOutputBorderColor: #000000;
   --dfOutputBorderRadius: 50px;
-  --dfOutputRight: -3px;
+  --dfOutputRight: 9px;
   --dfOutputHeight: 20px;
   --dfOutputWidth: 20px;
 
@@ -265,8 +270,8 @@
   min-height: var(--dfNodeMinHeight);
   width: auto;
   min-width: var(--dfNodeMinWidth);
-  padding-top: var(--dfNodePaddingTop);
-  padding-bottom: var(--dfNodePaddingBottom);
+  // padding-top: var(--dfNodePaddingTop);
+  // padding-bottom: var(--dfNodePaddingBottom);
   -webkit-box-shadow: var(--dfNodeBoxShadowHL) var(--dfNodeBoxShadowVL)
     var(--dfNodeBoxShadowBR) var(--dfNodeBoxShadowS) var(--dfNodeBoxShadowColor);
   box-shadow: var(--dfNodeBoxShadowHL) var(--dfNodeBoxShadowVL)
@@ -379,4 +384,3 @@
   border: var(--dfDeleteHoverBorderSize) solid var(--dfDeleteHoverBorderColor);
   border-radius: var(--dfDeleteHoverBorderRadius);
 }
-
