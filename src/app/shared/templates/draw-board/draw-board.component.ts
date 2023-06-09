@@ -5,7 +5,6 @@ import {
 	ElementRef,
 } from '@angular/core';
 import Drawflow from 'drawflow';
-import { optNode, targetMapNodes } from '../../utils/models/draw-flow.model';
 import {
 	component,
 	flow,
@@ -17,7 +16,6 @@ import {
 } from '../../utils/models/representation-data.model';
 
 import { ComponentsService } from '../../utils/services/components.service';
-import { RenderContentNode } from '../../helpers/render-content-node/render-content-node.service';
 import { DrawFlowService } from '../../helpers/draw-flow/draw-flow.service'
 
 @Component({
@@ -33,7 +31,6 @@ export class DrawBoardComponent implements AfterViewInit {
 
 	constructor(
 		private _components: ComponentsService,
-    private renderContentNode: RenderContentNode,
     private drawFlowService: DrawFlowService
 	) {
 		this.data['components'] = this._components.getData();
@@ -41,29 +38,15 @@ export class DrawBoardComponent implements AfterViewInit {
 
 	ngAfterViewInit() {
     this.drawFlowService.initEditor(this.drawflow.nativeElement)
-    // this.createNodesAccordingRoute()
-    
-		// this.editor = new Drawflow(this.drawflow.nativeElement);
-		// this.editor.reroute = true;
-		// this.editor.start();
-
-		// this.editor.on('nodeCreated', (id) => {
-    //   this.renderContentNode.renderNodeContent(id)
-		// });
-
-		// this.editor.addModule('Main');
-		// this.createNodesAccordingRoute();
+		this.createNodesAccordingRoute();
 
 		// this.editor.addConnection(1, 2, 'output_1', 'input_1');
 	}
 
 	createNodesAccordingRoute() {
-		let nodeId: number = 1;
 		this.data[this.route]?.forEach((element: component | flow | path) => {
-      
-      this.renderContentNode.saveKeys(nodeId, element.id)
-			nodeId++;
-			this.drawFlowService.addNode({
+
+			this.drawFlowService.addNode(element.id, {
 				name: element.data.name,
 				posx: element.posx,
 				posy: element.posy,
@@ -76,33 +59,5 @@ export class DrawBoardComponent implements AfterViewInit {
 		});
 	}
 
-	addNode(options?: Partial<optNode>) {
-		let optsDefault: optNode = {
-			name: 'default',
-			inputs: 0,
-			outputs: 1,
-			posx: 10,
-			posy: 10,
-			class: 'classfor',
-			data: {},
-			html: '<div><h1>Node 1</h1><p>Content</p></div>',
-			typenode: false,
-		};
 
-		if (options) {
-			optsDefault = { ...optsDefault, ...options };
-		}
-
-		this.editor.addNode(
-			optsDefault.name,
-			optsDefault.inputs,
-			optsDefault.outputs,
-			optsDefault.posx,
-			optsDefault.posy,
-			optsDefault.class,
-			optsDefault.data,
-			optsDefault.html,
-			optsDefault.typenode
-		);
-	}
 }

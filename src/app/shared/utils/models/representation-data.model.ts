@@ -40,17 +40,17 @@ export interface dataComponent {
   name: string;
   framework: string;
   hosting: string;
-  version: string;
-  repository: string;
-  continuousDeployment: boolean;
-  automatedDeliveryProcess: boolean;
-  frequentDeliveries: boolean;
-  automatedTesting: boolean;
-  versionControl: boolean;
-  monitoring: boolean;
-  lastDeploy: string;
-  unitTesting: number;
-  wiki: string;
+  version?: string;
+  repository?: string;
+  continuousDeployment?: boolean;
+  automatedDeliveryProcess?: boolean;
+  frequentDeliveries?: boolean;
+  automatedTesting?: boolean;
+  versionControl?: boolean;
+  monitoring?: boolean;
+  lastDeploy?: string;
+  unitTesting?: number;
+  wiki?: string;
 }
 
 // FLUJO

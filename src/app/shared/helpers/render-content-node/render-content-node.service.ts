@@ -2,7 +2,7 @@ import {
   Injectable,
 	ElementRef,
 	Renderer2,
-  RendererFactory2 
+  RendererFactory2
 } from '@angular/core';
 
 import { optNode, targetMapNodes } from '../../utils/models/draw-flow.model';
@@ -13,14 +13,14 @@ import { ComponentsService } from '../../utils/services/components.service';
 })
 export class RenderContentNode {
   private renderer: Renderer2;
-  
+
   mapNodes: { [key: number]: number } = {};
   // map de connections
 
   constructor(rendererFactory: RendererFactory2, private _components: ComponentsService) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
-  
+
   renderNodeContent(id: number) {
 		let node_content = document.getElementById('node-' + id)?.children[1];
 		let component = this._components.getItem(this.mapNodes[id]);
@@ -33,11 +33,11 @@ export class RenderContentNode {
 		if (component) {
 			data = component.data;
 			let deploymentArray: boolean[] = [];
-			deploymentArray.push(data.automatedDeliveryProcess);
-			deploymentArray.push(data.frequentDeliveries);
-			deploymentArray.push(data.automatedTesting);
-			deploymentArray.push(data.versionControl);
-			deploymentArray.push(data.monitoring);
+			deploymentArray.push(data.automatedDeliveryProcess || false);
+			deploymentArray.push(data.frequentDeliveries || false);
+			deploymentArray.push(data.automatedTesting || false);
+			deploymentArray.push(data.versionControl || false);
+			deploymentArray.push(data.monitoring || false);
 
 			let aprovedQuantyDeployment = deploymentArray.filter((element) => !!element);
 
@@ -77,35 +77,35 @@ export class RenderContentNode {
 				</div>
 				<div class="sc-node-card__item">
 					<h6 class="fw-bold">
-					continuous Deployment: ${bolToIcon(data.continuousDeployment)}</h6>
+					continuous Deployment: ${bolToIcon(data.continuousDeployment || false)}</h6>
 					<div>
 						<span>
-							${aprovedQuantyDeployment.length} Applied 
+							${aprovedQuantyDeployment.length} Applied
 							<span class="opacity-75">
 								of ${deploymentArray.length}
 							</span>
-						</span> 
+						</span>
 					</div>
 					<ul class="list-unstyled">
 						<li>
 							<span class="opacity-75">automated Delivery Process: </span>
-							<span>${bolToIcon(data.automatedDeliveryProcess)}</span>
+							<span>${bolToIcon(data.automatedDeliveryProcess || false)}</span>
 						</li>
 						<li>
 							<span class="opacity-75">frequent Deliveries: </span>
-							<span>${bolToIcon(data.frequentDeliveries)}</span>
+							<span>${bolToIcon(data.frequentDeliveries || false)}</span>
 						</li>
 						<li>
 							<span class="opacity-75">automated Testing: </span>
-							<span>${bolToIcon(data.automatedTesting)}</span>
+							<span>${bolToIcon(data.automatedTesting || false)}</span>
 						</li>
 						<li>
 							<span class="opacity-75">version Control: </span>
-							<span>${bolToIcon(data.versionControl)}</span>
+							<span>${bolToIcon(data.versionControl || false)}</span>
 						</li>
 						<li>
 							<span class="opacity-75">monitoring: </span>
-							<span>${bolToIcon(data.monitoring)}</span>
+							<span>${bolToIcon(data.monitoring || false)}</span>
 						</li>
 					</ul>
 				</div>
@@ -122,13 +122,13 @@ export class RenderContentNode {
 						</div>
 					</div>
 					<div class="progress mt-1 mb-0" style="height: 7px;">
-						<div 
-						class="progress-bar 
-						bg-success" 
-						role="progressbar" 
-						style="width: ${data.unitTesting}%" 
-						aria-valuenow="${data.unitTesting}" 
-						aria-valuemin="0" 
+						<div
+						class="progress-bar
+						bg-success"
+						role="progressbar"
+						style="width: ${data.unitTesting}%"
+						aria-valuenow="${data.unitTesting}"
+						aria-valuemin="0"
 						aria-valuemax="100">
 						</div>
 					</div>
@@ -140,7 +140,7 @@ export class RenderContentNode {
 					</blockquote>
 				</div>
 			</div>
-			
+
 			`;
 
 			container.innerHTML = html;
@@ -149,9 +149,9 @@ export class RenderContentNode {
 		}
 
 	}
-  
+
   saveKeys(nodeId: number, elementId: number) {
     this.mapNodes[nodeId] = elementId;
   }
-  
+
 }

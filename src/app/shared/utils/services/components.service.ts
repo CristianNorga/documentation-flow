@@ -6,6 +6,7 @@ import { component } from '../models/representation-data.model';
   providedIn: 'root',
 })
 export class ComponentsService {
+  // private worker!: Worker;
   private data: component[] = [
     {
       id: 1686063478328,
@@ -54,14 +55,38 @@ export class ComponentsService {
       },
     },
   ];
-  constructor() {}
+  constructor() {
+    // if (typeof Worker !== 'undefined') {
+    //   this.worker = new Worker(new URL('../../../main.worker', import.meta.url));
+    //   this.worker.onmessage = ({ data }) => {
+    //     const result = data;
+
+    //     if (result.success) {
+    //       console.log(result.message);
+    //     } else {
+    //       console.error(result.message);
+    //     }
+    //   };
+    // } else {
+    //   console.log('Your browser doesn\'t support web workers.');
+    // }
+  }
 
   public getData(): component[] {
+    // this.worker.postMessage({ operation: 'save', body: '' });
     return this.data;
   }
 
   public getItem(id: number): component | undefined {
     const item = this.data.find((item) => item.id === id);
     return item;
+  }
+
+  public createItem(item: component): void {
+    this.data.push(item);
+  }
+
+  handleMessage(event: MessageEvent) {
+
   }
 }
